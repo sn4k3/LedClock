@@ -1,0 +1,126 @@
+// 
+// 
+// 
+
+#include "Display.h"
+#include <Time.h>
+#include "DhtSensor.h"
+
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
+
+byte charBitmap[][8] = {
+	{ // CLOCK
+		B00000,
+		B00000,
+		B01110,
+		B10101,
+		B10111,
+		B10001,
+		B01110,
+		B00000
+	},
+	{ // TEMPERATURE
+		B00100,
+		B01010,
+		B01010,
+		B01110,
+		B01110,
+		B11111,
+		B11111,
+		B01110
+	},
+	{ // HUMIDITY
+		B00100,
+		B00100,
+		B01010,
+		B01010,
+		B10001,
+		B10001,
+		B10001,
+		B01110
+	}
+};
+
+void formatTimeDigits(char strOut[3], int num)
+{
+	strOut[0] = '0' + (num / 10);
+	strOut[1] = '0' + (num % 10);
+	strOut[2] = '\0';
+}
+
+
+void DisplayClass::init()
+{
+	lcd.begin(20, 4);
+
+
+	byte charBitmapSize = (sizeof(charBitmap) / sizeof(charBitmap[0]));
+	for (byte i = 0; i < charBitmapSize; i++)
+	{
+		lcd.createChar(i, (uint8_t *)charBitmap[i]);
+	}
+
+	lcd.home();
+	lcd.print(F("   LED CLOCK v1.0   "));
+	lcd.setCursor(0, 1);
+	lcd.print(F("By: Tiago Conceicao"));
+
+	lcd.setCursor(0, 2);
+	lcd.print(F("Initializing..."));
+	lcd.setBacklight(2);
+}
+
+void DisplayClass::render()
+{
+	char str[3];
+	lcd.home();
+	formatTimeDigits(str, day());
+	lcd.print(str);
+	lcd.print(' ');
+	lcd.print(monthStr(month()));
+	lcd.print(' ');
+	lcd.print(year());
+
+	lcd.setCursor(0, 1);
+	
+	//lcd.write((uint8_t)CHAR_CLOCK);
+	//lcd.print(' ');
+
+	formatTimeDigits(str, hour());
+	lcd.print(str);
+	lcd.print(':');
+
+	formatTimeDigits(str, minute());
+	lcd.print(str);
+	lcd.print(':');
+
+
+	formatTimeDigits(str, second());
+	lcd.print(str);
+
+	lcd.print(' ');
+	//char weekday_c[13];
+	//sprintf(weekday_c, "%12s", dayStr(weekday()));
+	lcd.print(dayStr(weekday()));
+
+	lcd.leftToRight();
+	lcd.setCursor(0, 2);
+	//lcd.print(F("Temp: "));
+	lcd.write((uint8_t)CHAR_TEMPERATURE);
+	lcd.print(' ');
+	lcd.print(DhtSensor.getTemperature(), 2);
+	lcd.print((char)223);
+	lcd.print('C');
+
+	lcd.print(' ');
+	lcd.print(' ');
+	lcd.write((uint8_t)CHAR_HUMIDITY);
+	lcd.print(' ');
+	lcd.print(DhtSensor.getHumidity(), 2);
+	//lcd.print((char)223);
+	lcd.print('%');
+}
+
+
+DisplayClass Display;
+

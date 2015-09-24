@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="_core">
+      <UniqueIdentifier>{f334c659-e306-43eb-9960-1248b269fb7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries">
+      <UniqueIdentifier>{500dd089-7b32-4b24-b1c5-fa9741f2a024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Adafruit_GFX_Library">
+      <UniqueIdentifier>{80dadd3a-47a5-4b16-acee-c59ee6e21476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Adafruit_ILI9341">
+      <UniqueIdentifier>{24bfcf5d-0dc5-4cae-a8a9-fb83bd0ef6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\DHT">
+      <UniqueIdentifier>{d38c9811-e157-49b9-aa43-b9b3a26c9412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\DS3232RTC">
+      <UniqueIdentifier>{d88501a3-42d4-4cd1-bc8e-223adaaa9c8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\EEPROM">
+      <UniqueIdentifier>{03b57910-2b3e-4e0f-8f38-131913eac8db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\FastLED">
+      <UniqueIdentifier>{7366ebd0-5592-4121-8ebc-e6c61c4422ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\MemoryFree">
+      <UniqueIdentifier>{e4c0a4a9-7471-4d82-98d1-e026ad27c94c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Radio">
+      <UniqueIdentifier>{d36caaae-5c39-4da0-baab-6e0f7b2a1b9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\SoftwareSerial">
+      <UniqueIdentifier>{c3a66bed-97d2-43bf-8000-65571bb16375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\SPI">
+      <UniqueIdentifier>{934dc68f-98d0-4e86-a83b-4dad48f38cd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\TEA5767">
+      <UniqueIdentifier>{4af503a5-209d-4fba-869e-a5bfcf84bc0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Time">
+      <UniqueIdentifier>{b78ae3fa-c41a-4987-a915-a159319ba937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Timer">
+      <UniqueIdentifier>{9881b943-8dac-4d8f-96c7-a98a35dd34d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Wire">
+      <UniqueIdentifier>{5aff3b16-9609-4122-a41c-5d380b2a9136}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Wire\utility">
+      <UniqueIdentifier>{d4cd624d-97db-4b57-93ad-3e45ee06ba85}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LedClock.ino" />
+    <None Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.S">
+      <Filter>_core</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GasSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhotoresistorSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DhtSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buzzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RadioFM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\binary.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Client.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\new.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Print.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Printable.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Server.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Stream.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Udp.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBAPI.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBCore.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBDesc.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WCharacter.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\mighty-1284p\avr\variants\standard\pins_arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Adafruit_GFX_Library\Adafruit_GFX.h">
+      <Filter>_libraries\Adafruit_GFX_Library</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Adafruit_ILI9341\Adafruit_ILI9341.h">
+      <Filter>_libraries\Adafruit_ILI9341</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\DHT\DHT.h">
+      <Filter>_libraries\DHT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\DS3232RTC\DS3232RTC.h">
+      <Filter>_libraries\DS3232RTC</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\EEPROM\EEPROM.h">
+      <Filter>_libraries\EEPROM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\block_clockless.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\chipsets.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\clockless.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\clockless2.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\clockless_arm_k20.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\clockless_arm_sam.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\clockless_trinket.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\color.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\colorpalettes.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\colorutils.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\controller.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\delay.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\dmx.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\FastLED.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastpin.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastpin_arm_k20.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastpin_arm_sam.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastpin_avr.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_arm_k20.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_arm_sam.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_avr.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_bitbang.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_dma.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\FastSPI_LED2.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_nop.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\fastspi_ref.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\hsv2rgb.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\led_sysdefs.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\lib8tion.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\noise.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\pixeltypes.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\power_mgt.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\FastLED\smartmatrix_t3.h">
+      <Filter>_libraries\FastLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\MemoryFree\MemoryFree.h">
+      <Filter>_libraries\MemoryFree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\newchip.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\radio.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\RDA5807M.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\RDSParser.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\SI4703.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\SI4705.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Radio\TEA5767.h">
+      <Filter>_libraries\Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SoftwareSerial\SoftwareSerial.h">
+      <Filter>_libraries\SoftwareSerial</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.h">
+      <Filter>_libraries\SPI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\TEA5767\TEA5767N.h">
+      <Filter>_libraries\TEA5767</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Time\Time.h">
+      <Filter>_libraries\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Timer\Event.h">
+      <Filter>_libraries\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Timer\Timer.h">
+      <Filter>_libraries\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\Wire.h">
+      <Filter>_libraries\Wire</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\utility\twi.h">
+      <Filter>_libraries\Wire\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Alarms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="__vm\.LedClock.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GasSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PhotoresistorSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DhtSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Buzzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RadioFM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\abi.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\CDC.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial0.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial1.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial2.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial3.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HID.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\hooks.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\main.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\new.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Print.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Stream.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Tone.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBCore.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WInterrupts.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_analog.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_digital.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_shift.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WMath.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Adafruit_GFX_Library\Adafruit_GFX.cpp">
+      <Filter>_libraries\Adafruit_GFX_Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Adafruit_GFX_Library\glcdfont.c">
+      <Filter>_libraries\Adafruit_GFX_Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Adafruit_ILI9341\Adafruit_ILI9341.cpp">
+      <Filter>_libraries\Adafruit_ILI9341</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\DHT\DHT.cpp">
+      <Filter>_libraries\DHT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\DS3232RTC\DS3232RTC.cpp">
+      <Filter>_libraries\DS3232RTC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\colorpalettes.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\colorutils.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\FastLED.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\hsv2rgb.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\lib8tion.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\noise.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\FastLED\power_mgt.cpp">
+      <Filter>_libraries\FastLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\MemoryFree\MemoryFree.cpp">
+      <Filter>_libraries\MemoryFree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\newchip.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\radio.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\RDA5807M.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\RDSParser.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\SI4703.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\SI4705.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Radio\TEA5767.cpp">
+      <Filter>_libraries\Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SoftwareSerial\SoftwareSerial.cpp">
+      <Filter>_libraries\SoftwareSerial</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.cpp">
+      <Filter>_libraries\SPI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\TEA5767\TEA5767N.cpp">
+      <Filter>_libraries\TEA5767</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Time\DateStrings.cpp">
+      <Filter>_libraries\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Time\Time.cpp">
+      <Filter>_libraries\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Timer\Event.cpp">
+      <Filter>_libraries\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Timer\Timer.cpp">
+      <Filter>_libraries\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\Wire.cpp">
+      <Filter>_libraries\Wire</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\utility\twi.c">
+      <Filter>_libraries\Wire\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Alarms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
