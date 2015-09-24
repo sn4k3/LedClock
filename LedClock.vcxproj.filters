@@ -64,11 +64,20 @@
     <Filter Include="_libraries\Wire\utility">
       <UniqueIdentifier>{d4cd624d-97db-4b57-93ad-3e45ee06ba85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{5d2ea028-bac4-46b5-a4d5-b5e1c4190081}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="LedClock.ino" />
     <None Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.S">
       <Filter>_core</Filter>
+    </None>
+    <None Include="LedClock.fzz">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="ledclock_schemantic.pdf">
+      <Filter>Resources</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -536,5 +545,10 @@
     <ClCompile Include="Alarms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ledclock_schemantic.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

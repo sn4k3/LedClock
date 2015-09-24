@@ -78,9 +78,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.S" />
+    <None Include="LedClock.fzz" />
     <None Include="LedClock.ino">
       <FileType>CppCode</FileType>
     </None>
+    <None Include="ledclock_schemantic.pdf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\libraries\Adafruit_GFX_Library\Adafruit_GFX.h" />
@@ -239,6 +241,9 @@
     <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="DhtSensor.cpp" />
     <ClCompile Include="SettingsConfig.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ledclock_schemantic.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
