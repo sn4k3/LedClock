@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON"
+                android:id="@+id/btnRadioOn"
+                android:hint="ON"
+                android:onClick="onBtnClicked"
+                android:textColor="#00ff00"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFF"
+                android:id="@+id/btnRadioOff"
+                android:hint="OFF"
+                android:onClick="onBtnClicked"
+                android:textColor="#ff0000"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RFM"
+                android:id="@+id/btnRadioRFM"
+                android:hint="FREQ 10090"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/tbRadioFreq"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M80"
+                android:id="@+id/btnRadioM80"
+                android:hint="FREQ 10640"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/tbRadioFreq"
+                android:layout_toEndOf="@+id/btnRadioRFM" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tbRadioFreq"
+                android:inputType="number"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/btnRadioM80" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:id="@+id/btnRadioChange"
+                android:hint="FREQ 10090"
+                android:onClick="onBtnClicked"
+                android:layout_above="@+id/btnRadioM80"
+                android:layout_alignTop="@+id/tbRadioFreq"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/btnRadioComercial" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comercial"
+                android:id="@+id/btnRadioComercial"
+                android:hint="FREQ 9200"
+                android:onClick="onBtnClicked"
+                android:layout_alignTop="@+id/btnRadioM80"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/btnRadioM80" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvRadioFrequency"
+                android:layout_alignBottom="@+id/tbRadioFreq"
+                android:layout_alignTop="@+id/btnRadioChange"
+                android:layout_toEndOf="@+id/btnRadioRFM"
+                android:autoText="false"
+                android:text="Frequency"
+                android:gravity="center" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RR"
+                android:id="@+id/btnRadioRR"
+                android:hint="FREQ 9650"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnRadioAntena1"
+                android:layout_alignParentStart="true"
+                android:layout_alignEnd="@+id/btnRadioAntena1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Antena 1"
+                android:id="@+id/btnRadioAntena1"
+                android:hint="FREQ 8770"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnRadioRFM"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/btnRadioM80" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Antena 2"
+                android:id="@+id/btnRadioAntena2"
+                android:hint="FREQ 9110"
+                android:onClick="onBtnClicked"
+                android:layout_alignEnd="@+id/btnRadioM80"
+                android:layout_alignBottom="@+id/btnRadioAntena1"
+                android:layout_toEndOf="@+id/btnRadioRFM" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Antena 3"
+                android:id="@+id/btnAntena3"
+                android:hint="FREQ 10240"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnRadioM80"
+                android:layout_alignEnd="@+id/btnRadioComercial"
+                android:layout_toEndOf="@+id/btnRadioM80"
+                android:layout_alignBottom="@+id/btnRadioAntena2" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pax"
+                android:id="@+id/btnRadioPax"
+                android:hint="FREQ 10140"
+                android:onClick="onBtnClicked"
+                android:layout_alignBottom="@+id/btnRadioRR"
+                android:layout_toEndOf="@+id/btnRadioRR" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voz da Planície"
+                android:id="@+id/btnRadioVozPlanicie"
+                android:hint="FREQ 10450"
+                android:onClick="onBtnClicked"
+                android:layout_alignTop="@+id/btnRadioPax"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/btnAntena3"
+                android:layout_alignBottom="@+id/btnRadioPax" />
+
+            <SeekBar
+                android:id="@+id/sbRadioVolume"
+                android:layout_width="800dp"
+                android:layout_height="wrap_content"
+                android:max="150"
+                android:progress="75"
+                android:layout_below="@+id/btnRadioOff"
+                android:layout_toEndOf="@+id/btnRadioOn"
+                android:layout_toStartOf="@+id/btnRadioOff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvRadioVolume"
+                android:text="Volume: (50)"
+                android:layout_above="@+id/sbRadioVolume"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:autoText="false"
+                android:text="Stations:"
+                android:gravity="center"
+                android:layout_below="@+id/sbRadioVolume"
+                android:layout_marginTop="24dp"
+                android:layout_alignEnd="@+id/btnRadioChange"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol Down"
+                android:id="@+id/btnRadioVolDown"
+                android:onClick="onBtnClicked"
+                android:hint="VOL -"
+                android:layout_below="@+id/btnRadioOn"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/sbRadioVolume" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol Up"
+                android:id="@+id/btnRadioVolUp"
+                android:onClick="onBtnClicked"
+                android:hint="VOL +"
+                android:layout_below="@+id/btnRadioOff"
+                android:layout_alignStart="@+id/btnRadioOff"
+                android:layout_alignEnd="@+id/btnRadioOff"
+                android:layout_alignBottom="@+id/btnRadioVolDown" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mute"
+                android:id="@+id/cbRadioMute"
+                android:checked="false"
+                android:layout_below="@+id/btnRadioVolDown"
+                android:layout_alignParentStart="true"
+                android:layout_alignEnd="@+id/btnRadioVolDown" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

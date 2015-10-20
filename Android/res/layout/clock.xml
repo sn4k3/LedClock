@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick Date"
+                android:id="@+id/btnClockPickDate"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/btnClockPickTime"
+                android:onClick="onBtnClicked"
+                android:clickable="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick Time"
+                android:id="@+id/btnClockPickTime"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:onClick="onBtnClicked"
+                android:clickable="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:id="@+id/btnClockToday"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/tvClockDateTime"
+                android:layout_alignParentStart="true"
+                android:layout_alignEnd="@+id/tvClockDateTime"
+                android:onClick="onBtnClicked"
+                android:clickable="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="DATE and TIME"
+                android:id="@+id/tvClockDateTime"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignBottom="@+id/btnClockPickDate"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sync with clock"
+                android:id="@+id/btnClockSync"
+                android:layout_marginRight="5dp"
+                android:layout_alignTop="@+id/btnClockToday"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/btnClockPickDate"
+                android:onClick="onBtnClicked"
+                android:clickable="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time Indicator Style"
+                android:id="@+id/textView3"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/btnClockToday"
+                android:layout_alignStart="@+id/btnClockToday"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Hours"
+                android:id="@+id/tvClockTimeStyleHours"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_alignBottom="@+id/btnClockStyleHoursFill"
+                android:layout_alignEnd="@+id/tvClockTimeStyleSeconds" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fill"
+                android:id="@+id/btnClockStyleHoursFill"
+                android:layout_alignTop="@+id/btnClockStyleHoursCurrent"
+                android:layout_toStartOf="@+id/btnClockStyleHoursCurrent"
+                android:minWidth="70dp"
+                android:onClick="onBtnClicked" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current"
+                android:id="@+id/btnClockStyleHoursCurrent"
+                android:layout_below="@+id/textView3"
+                android:layout_toStartOf="@+id/btnClockStyleHoursNone"
+                android:minWidth="70dp"
+                android:onClick="onBtnClicked" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:id="@+id/btnClockStyleHoursNone"
+                android:layout_alignTop="@+id/btnClockStyleHoursCurrent"
+                android:layout_alignEnd="@+id/btnClockSync"
+                android:minWidth="70dp"
+                android:onClick="onBtnClicked"
+                android:enabled="false" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:id="@+id/btnClockStyleMinutesNone"
+                android:layout_toEndOf="@+id/btnClockStyleHoursCurrent"
+                android:layout_below="@+id/tvClockTimeStyleHours"
+                android:minWidth="70dp"
+                android:onClick="onBtnClicked"
+                android:enabled="false" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current"
+                android:id="@+id/btnClockStyleMinutesCurrent"
+                android:layout_alignTop="@+id/btnClockStyleMinutesNone"
+                android:layout_toStartOf="@+id/btnClockStyleMinutesNone"
+                android:minWidth="70dp"
+                android:onClick="onBtnClicked" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fill"
+                android:id="@+id/btnClockStyleMinutesFill"
+                android:layout_alignTop="@+id/btnClockStyleMinutesCurrent"
+                android:layout_toStartOf="@+id/btnClockStyleMinutesCurrent"
+                android:minWidth="70dp"
+                android:onClick="onBtnClicked" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Minutes"
+                android:id="@+id/tvClockTimeStyleMinutes"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_above="@+id/btnClockStyleSecondsFill"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_alignTop="@+id/btnClockStyleMinutesFill"
+                android:layout_alignEnd="@+id/tvClockTimeStyleHours" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seconds"
+                android:id="@+id/tvClockTimeStyleSeconds"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_alignStart="@+id/textView6"
+                android:layout_alignBottom="@+id/btnClockStyleSecondsFill"
+                android:layout_alignTop="@+id/btnClockStyleSecondsFill" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fill"
+                android:id="@+id/btnClockStyleSecondsFill"
+                android:minWidth="70dp"
+                android:layout_below="@+id/btnClockStyleMinutesFill"
+                android:layout_toStartOf="@+id/btnClockStyleSecondsCurrent"
+                android:onClick="onBtnClicked"
+                android:enabled="false" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current"
+                android:id="@+id/btnClockStyleSecondsCurrent"
+                android:minWidth="70dp"
+                android:layout_alignTop="@+id/btnClockStyleSecondsFill"
+                android:layout_toStartOf="@+id/btnClockStyleSecondsNone"
+                android:onClick="onBtnClicked" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:id="@+id/btnClockStyleSecondsNone"
+                android:minWidth="70dp"
+                android:layout_alignTop="@+id/btnClockStyleSecondsCurrent"
+                android:layout_alignStart="@+id/btnClockStyleMinutesNone"
+                android:onClick="onBtnClicked" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time Colors"
+                android:id="@+id/textView6"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="24dp"
+                android:layout_below="@+id/tvClockTimeStyleSeconds"
+                android:layout_alignStart="@+id/btnClockToday"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Hours"
+                android:id="@+id/textView7"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_above="@+id/btnClockTimeColorsMinutesSync"
+                android:layout_alignStart="@+id/textView6"
+                android:layout_below="@+id/textView6"
+                android:layout_alignEnd="@+id/textView8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Minutes"
+                android:id="@+id/textView8"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/textView7"
+                android:layout_alignStart="@+id/textView6"
+                android:layout_alignBottom="@+id/btnClockTimeColorsMinutesSync"
+                android:layout_alignEnd="@+id/textView9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seconds"
+                android:id="@+id/textView9"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/textView8"
+                android:layout_alignStart="@+id/textView6"
+                android:layout_alignBottom="@+id/btnClockTimeColorsSecondsSync" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sync"
+                android:id="@+id/btnClockTimeColorsHoursSync"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/textView6"
+                android:layout_alignEnd="@+id/btnClockStyleSecondsNone" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sync"
+                android:id="@+id/btnClockTimeColorsMinutesSync"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnClockTimeColorsHoursSync"
+                android:layout_alignStart="@+id/btnClockTimeColorsHoursSync" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sync"
+                android:id="@+id/btnClockTimeColorsSecondsSync"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnClockTimeColorsMinutesSync"
+                android:layout_alignEnd="@+id/btnClockStyleSecondsNone" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsHoursBlue"
+                android:text="0"
+                android:minWidth="55dp"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3"
+                android:layout_alignTop="@+id/btnClockTimeColorsHoursSync"
+                android:layout_toStartOf="@+id/btnClockTimeColorsHoursSync"
+                android:layout_above="@+id/btnClockTimeColorsMinutesSync" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsHoursGreen"
+                android:text="0"
+                android:layout_alignBottom="@+id/btnClockTimeColorsHoursSync"
+                android:layout_toStartOf="@+id/etClockTimeColorsHoursBlue"
+                android:minWidth="55dp"
+                android:layout_alignTop="@+id/etClockTimeColorsHoursBlue"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsHoursRed"
+                android:text="255"
+                android:layout_toStartOf="@+id/etClockTimeColorsHoursGreen"
+                android:minWidth="55dp"
+                android:layout_below="@+id/textView6"
+                android:layout_above="@+id/textView8"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsMinutesBlue"
+                android:text="255"
+                android:minWidth="55dp"
+                android:layout_toEndOf="@+id/etClockTimeColorsHoursGreen"
+                android:layout_alignBottom="@+id/btnClockTimeColorsMinutesSync"
+                android:layout_alignTop="@+id/btnClockTimeColorsMinutesSync"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsMinutesGreen"
+                android:text="0"
+                android:minWidth="55dp"
+                android:layout_alignBottom="@+id/etClockTimeColorsMinutesBlue"
+                android:layout_toStartOf="@+id/etClockTimeColorsMinutesBlue"
+                android:layout_alignTop="@+id/etClockTimeColorsMinutesBlue"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsMinutesRed"
+                android:text="0"
+                android:minWidth="55dp"
+                android:layout_below="@+id/etClockTimeColorsHoursGreen"
+                android:layout_alignStart="@+id/etClockTimeColorsHoursRed"
+                android:layout_alignBottom="@+id/etClockTimeColorsMinutesGreen"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/blue"
+                android:id="@+id/textView10"
+                android:layout_above="@+id/etClockTimeColorsHoursBlue"
+                android:layout_alignStart="@+id/etClockTimeColorsHoursBlue"
+                android:layout_toStartOf="@+id/btnClockTimeColorsHoursSync"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/holo_blue_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/green"
+                android:id="@+id/textView11"
+                android:gravity="center_horizontal"
+                android:layout_alignTop="@+id/textView10"
+                android:layout_above="@+id/etClockTimeColorsHoursGreen"
+                android:layout_alignEnd="@+id/etClockTimeColorsHoursGreen"
+                android:layout_toEndOf="@+id/etClockTimeColorsHoursRed"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/red"
+                android:id="@+id/textView12"
+                android:gravity="center_horizontal"
+                android:layout_alignTop="@+id/textView11"
+                android:layout_alignStart="@+id/etClockTimeColorsHoursRed"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_alignEnd="@+id/etClockTimeColorsHoursRed" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsSecondsBlue"
+                android:text="0"
+                android:minWidth="55dp"
+                android:layout_below="@+id/etClockTimeColorsMinutesBlue"
+                android:layout_toEndOf="@+id/etClockTimeColorsMinutesGreen"
+                android:layout_alignBottom="@+id/btnClockTimeColorsSecondsSync"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsSecondsGreen"
+                android:text="255"
+                android:minWidth="55dp"
+                android:layout_below="@+id/etClockTimeColorsMinutesBlue"
+                android:layout_toStartOf="@+id/etClockTimeColorsMinutesBlue"
+                android:layout_alignBottom="@+id/etClockTimeColorsSecondsBlue"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockTimeColorsSecondsRed"
+                android:text="0"
+                android:minWidth="55dp"
+                android:layout_alignTop="@+id/etClockTimeColorsSecondsGreen"
+                android:layout_toStartOf="@+id/etClockTimeColorsSecondsGreen"
+                android:layout_alignBottom="@+id/etClockTimeColorsSecondsGreen"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick"
+                android:id="@+id/btnTimeColorsHoursPick"
+                android:onClick="onBtnClicked"
+                android:layout_alignTop="@+id/etClockTimeColorsHoursRed"
+                android:layout_toStartOf="@+id/etClockTimeColorsHoursRed"
+                android:padding="0dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick"
+                android:id="@+id/btnTimeColorsMinutesPick"
+                android:onClick="onBtnClicked"
+                android:layout_alignTop="@+id/etClockTimeColorsMinutesRed"
+                android:layout_toStartOf="@+id/etClockTimeColorsMinutesRed"
+                android:padding="0dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick"
+                android:id="@+id/btnTimeColorsSecondsPick"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/etClockTimeColorsMinutesRed"
+                android:layout_toStartOf="@+id/etClockTimeColorsSecondsRed"
+                android:padding="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/rbg"
+                android:id="@+id/textView13"
+                android:gravity="center_horizontal"
+                android:layout_above="@+id/btnClockTimeColorsHoursSync"
+                android:layout_alignEnd="@+id/btnClockStyleSecondsNone"
+                android:layout_toEndOf="@+id/textView10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Options"
+                android:id="@+id/textView4"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/textView9"
+                android:layout_alignStart="@+id/btnClockToday"
+                android:layout_marginTop="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Brightness"
+                android:id="@+id/textView5"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="18dp"
+                android:layout_below="@+id/textView4"
+                android:layout_alignStart="@+id/textView4" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sync"
+                android:id="@+id/btnClockOptionsBrightnessSync"
+                android:minWidth="60dp"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/textView4"
+                android:layout_toEndOf="@+id/etClockTimeColorsSecondsBlue" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClockOptionsBrightness"
+                android:text="125"
+                android:minWidth="55dp"
+                android:numeric="integer"
+                android:inputType="number"
+                android:maxLength="3"
+                android:enabled="false"
+                android:layout_alignTop="@+id/chClockOptionsBrightnessAuto"
+                android:layout_toStartOf="@+id/etClockTimeColorsSecondsGreen"
+                android:layout_alignBottom="@+id/chClockOptionsBrightnessAuto" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Automatic"
+                android:id="@+id/chClockOptionsBrightnessAuto"
+                android:checked="true"
+                android:layout_alignBottom="@+id/btnClockOptionsBrightnessSync"
+                android:layout_alignTop="@+id/btnClockOptionsBrightnessSync"
+                android:layout_alignStart="@+id/etClockTimeColorsSecondsGreen"
+                android:layout_toStartOf="@+id/btnClockOptionsBrightnessSync" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sbClockOptionsBrightness"
+                android:max="255"
+                android:progress="125"
+                android:indeterminate="false"
+                android:layout_below="@+id/btnClockOptionsBrightnessSync"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color Wipe"
+                android:id="@+id/btnClockLEDTesterColorWipe"
+                android:onClick="onBtnClicked"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/textView14"
+                android:layout_alignStart="@+id/textView14"
+                android:layout_alignEnd="@+id/btnClockToday" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="LED Tester"
+                android:id="@+id/textView14"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/sbClockOptionsBrightness"
+                android:layout_alignStart="@+id/btnClockToday" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rainbow"
+                android:id="@+id/btnClockLEDTesterRainbow"
+                android:onClick="onBtnClicked"
+                android:layout_alignTop="@+id/btnClockLEDTesterColorWipe"
+                android:layout_alignStart="@+id/btnClockLEDTesterTheaterChase"
+                android:layout_alignEnd="@+id/btnClockLEDTesterTheaterChaseRainbow" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rainbow Cycle"
+                android:id="@+id/btnClockLEDTesterRainbowCycle"
+                android:onClick="onBtnClicked"
+                android:layout_alignTop="@+id/btnClockLEDTesterTheaterChase"
+                android:layout_alignEnd="@+id/btnClockLEDTesterColorWipe"
+                android:layout_alignStart="@+id/btnClockLEDTesterColorWipe" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theater Chase"
+                android:id="@+id/btnClockLEDTesterTheaterChase"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnClockLEDTesterColorWipe"
+                android:layout_toEndOf="@+id/btnClockLEDTesterColorWipe" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theater Chase Rainbow"
+                android:id="@+id/btnClockLEDTesterTheaterChaseRainbow"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnClockLEDTesterRainbowCycle"
+                android:layout_alignEnd="@+id/btnClockLEDTesterTheaterChase"
+                android:layout_alignStart="@+id/btnClockLEDTesterRainbowCycle" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All effects"
+                android:id="@+id/btnClockLEDTesterAll"
+                android:onClick="onBtnClicked"
+                android:layout_below="@+id/btnClockLEDTesterTheaterChaseRainbow"
+                android:layout_alignEnd="@+id/btnClockLEDTesterTheaterChaseRainbow"
+                android:layout_alignStart="@+id/btnClockLEDTesterTheaterChaseRainbow" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
