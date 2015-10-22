@@ -8,6 +8,9 @@
 #endif
 
 #include "Config.h"
+#include <radio.h>
+
+#define RADIO_MAX_VOLUME 150
 
 class RadioClass
 {
@@ -26,6 +29,10 @@ public:
 	void volumeDown();
 	void mute(bool ismute = true);
 	void toogleMute();
+
+	bool getState();
+
+	RADIO_INFO *info;
 };
 
 extern RadioClass Radio;

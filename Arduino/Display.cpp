@@ -1,6 +1,7 @@
 #include "Display.h"
 #include <Time.h>
 #include "DhtSensor.h"
+#include <RadioFM.h>
 
 Adafruit_ILI9341 tft = Adafruit_ILI9341(DISPLAY_TFT_CS, DISPLAY_TFT_DC);
 //Adafruit_ILI9341 tft = Adafruit_ILI9341(DISPLAY_TFT_CS, DISPLAY_TFT_DC, MISO, SCK, -1, MOSI);
@@ -17,6 +18,9 @@ byte DisplayClass::alignCenterPadding(byte length, byte textSize)
 {
 	switch (textSize)
 	{
+	case 2:
+		return round((DISPLAY_MAX_TEXT_SIZE2 - length) / 2);
+		break;
 	case 3:
 		return round((DISPLAY_MAX_TEXT_SIZE3 - length) / 2);
 		break;
@@ -193,9 +197,51 @@ void DisplayClass::render()
 		current_hours[2] = seconds;
 	}
 
+
+	// Radio
+	if(radio_need_update)
+	{
+		tft.setTextSize(2);
+		tft.fillRect(0, 170, 320, 30, ILI9341_BLACK);
+
+		if (Radio.getState())
+		{
+
+			tft.setCursor(0, 170);
+			tft.setTextColor(ILI9341_WHITE);
+
+			//byte radioVolumePercent = 100 * Settings.radioVolume / RADIO_MAX_VOLUME;
+
+			char frequency_str[7];
+			char radio_str[15];
+			ftoa(frequency_str, Settings.radioLastFrequency / 100.0, 2);
+			sprintf(radio_str, "FM: %s MHz", frequency_str);
+			Serial.println(radio_str);
+			byte padding = alignCenterPadding(strlen(radio_str), 2);
+			for (byte i = padding; i > 0; i--)
+			{
+				tft.print(' ');
+			}
+
+			tft.print("FM: ");
+			tft.setTextColor(ILI9341_RED);
+			tft.print(frequency_str);
+			tft.setTextColor(ILI9341_WHITE);
+			tft.print(" MHz");
+			//tft.setTextColor(ILI9341_RED);
+			//tft.print(radioVolumePercent);
+			tft.setTextColor(ILI9341_WHITE);
+			//tft.print('%');
+		}
+
+
+		radio_need_update = false;
+	}
+
+	// DHT Sensor
 	tft.setCursor(20, 220);
 	tft.setTextSize(3);
-	
+		
 	float value = DhtSensor.getTemperature();
 	if (current_temperature != value)
 	{
@@ -235,6 +281,10 @@ void DisplayClass::render()
 	
 }
 
+void DisplayClass::invalidate_radio()
+{
+	radio_need_update = true;
+}
 
 DisplayClass Display;
 

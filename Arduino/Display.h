@@ -9,6 +9,7 @@
 	#include "WProgram.h"
 #endif
 
+#define DISPLAY_MAX_TEXT_SIZE2 27
 #define DISPLAY_MAX_TEXT_SIZE3 17
 #define DISPLAY_MAX_TEXT_SIZE5 10
 
@@ -30,11 +31,15 @@ class DisplayClass
 	 byte current_hours[3];
 	 float current_temperature;
 	 float current_humidity;
+	 bool radio_need_update;
 
  public:
 	void init();
 	byte alignCenterPadding(byte length, byte textSize);
 	void render();
+
+	// Define radio to be updated and rendered in the next frame
+	void invalidate_radio();
 };
 
 extern DisplayClass Display;

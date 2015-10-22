@@ -5,11 +5,12 @@
 #include "radio.h"
 #include "TEA5767.h"
 #include <DS1803.h>
+#include <Display.h>
 
 TEA5767  radio;
 DS1803 pot(0x28);
 
-#define POT_MAX 150
+#define POT_MAX RADIO_MAX_VOLUME
 
 void RadioClass::init()
 {
@@ -19,7 +20,6 @@ void RadioClass::init()
 
 void RadioClass::on()
 {
-	Serial.println(state);
 	if (state)
 		return;
 	
@@ -40,6 +40,7 @@ void RadioClass::on()
 	}
 
 	mute(false);
+	Display.invalidate_radio();
 }
 
 
@@ -51,6 +52,8 @@ void RadioClass::off()
 	state = false;
 	radio.term();
 	digitalWrite(RADIO_TRANSISTOR_PIN, LOW);
+
+	Display.invalidate_radio();
 }
 
 void RadioClass::setFrequency(unsigned int frequency)
@@ -65,14 +68,15 @@ void RadioClass::setFrequency(unsigned int frequency)
 		radio.setFrequency(frequency);
 	}
 	
-	RADIO_INFO info;
-	radio.getRadioInfo(&info);
-	Serial.println(info.active);
-	Serial.println(info.mono);
-	Serial.println(info.rds);
-	Serial.println(info.rssi); // Quality x of 16
-	Serial.println(info.stereo);
-	Serial.println(info.tuned);
+	//radio.getRadioInfo(this->info);
+	/*Serial.println(this->info->active);
+	Serial.println(this->info->mono);
+	Serial.println(this->info->rds);
+	Serial.println(this->info->rssi); // Quality x of 16
+	Serial.println(this->info->stereo);
+	Serial.println(this->info->tuned);*/
+
+	Display.invalidate_radio();
 
 	SettingsConfig.save();
 }
@@ -121,5 +125,9 @@ void RadioClass::toogleMute()
 	mute(!bMute);
 }
 
+bool RadioClass::getState()
+{
+	return state;
+}
 
 RadioClass Radio;
